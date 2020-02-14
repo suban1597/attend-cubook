@@ -7,7 +7,7 @@
 <body>
 <?php
 $objConnect = mssql_connect("localhost","sa","Adminchul@book1") or die("Error Connect to Database");
-$objDB = mssql_select_db("Attend");
+$objDB = mssql_select_db("Line_Project");
 $strSQL = "SELECT  a.badgenumber,a.Name,b.CHECKTIME,c.MachineAlias from  USERINFO a, CHECKINOUT b, Machines c 
                    where a.USERID = b.USERID and b.SENSORID = c.ID  
 				   and a.badgenumber  LIKE $badgenumber order by b.CHECKTIME;  ";
